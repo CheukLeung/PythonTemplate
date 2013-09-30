@@ -9,13 +9,13 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "example",
+    name = "game_of_life",
     version = "0.0.5",
     author = "Cheuk",
     author_email = "cheuk.wingleung@xdin.com",
-    packages=['example', 'example.test'],
-    scripts=['bin/example.py','bin/wash-towels.py'],
-    url = "http://packages.python.org/an_example_pypi_project",
+    packages=['game_of_life', 'game_of_life.test'],
+    scripts=['bin/run_game.py'],
+    url = "",
     license = "LICENSE.txt",
     description = ("An demonstration of how to create, document, and publish "
 				   "to the cheese shop a5 pypi.org."),
