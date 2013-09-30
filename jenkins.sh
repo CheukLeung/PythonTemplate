@@ -2,7 +2,7 @@ cd game_of_life
 python test_pixel.py
 python test_universe.py
 
-pyreverse -A -S -o xml -p GameOfLife *.py
+pyreverse -A -S -o png -p GameOfLife *.py
 pylint --output-format=parseable *.py | tee pylint_out.txt
 
 pep8 *.py | tee pep8_out.txt
