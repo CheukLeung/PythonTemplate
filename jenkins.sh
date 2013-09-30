@@ -14,9 +14,10 @@ sloccount --duplicates --wide --details . > sloccount_out.txt
 pymetrics *.py > complexity.txt
 pycabehtml -i complexity.txt -o complexity.html -a complexity_acc.txt -g output.png
 
-coverage run test_pixel.py
-coverage run -a test_universe.py
+cd ..
+
+coverage run game_of_life/test_pixel.py
+coverage run -a game_of_life/test_universe.py
 coverage xml
 
-cd ..
 doxygen Doxyfile
