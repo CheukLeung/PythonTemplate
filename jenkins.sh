@@ -1,20 +1,13 @@
-cd game_of_life
-python test_pixel.py
-python test_universe.py
+python game_of_life/test_pixel.py
+python game_of_life/test_universe.py
 
-pyreverse -A -S -o png -p GameOfLife *.py
-pylint --output-format=parseable *.py | tee pylint_out.txt
-
-pep8 *.py | tee pep8_out.txt
-
-clonedigger --cpd-output *.py -o clonedigger_out.xml
-
-sloccount --duplicates --wide --details . > sloccount_out.txt
-
-pymetrics *.py > complexity.txt
+pylint --output-format=parseable game_of_life/*.py | tee pylint_out.txt
+pep8 game_of_life/*.py | tee pep8_out.txt
+clonedigger --cpd-output game_of_life/*.py -o clonedigger_out.xml
+sloccount --duplicates --wide --details game_of_life/ > sloccount_out.txt
+pymetrics game_of_life/*.py > complexity.txt
 pycabehtml -i complexity.txt -o complexity.html -a complexity_acc.txt -g output.png
-
-cd ..
+pyreverse -A -S -o png -p GameOfLife game_of_life/*.py
 
 coverage run game_of_life/test_pixel.py
 coverage run -a game_of_life/test_universe.py
