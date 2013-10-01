@@ -63,12 +63,12 @@ class Pixel(object):
         @cond
         >>> pix = Pixel(0, 0, True)
         >>> pix.step()
-        >>> pix.get_symbol()
-        'O'
-        >>> pix.set_next_live(False)
+        >>> pix.live
+        True
+        >>> pix.next_live = False
         >>> pix.step()
-        >>> pix.get_symbol()
-        ' '
+        >>> pix.live
+        False
 
         @endcond
         """
@@ -78,5 +78,13 @@ class Pixel(object):
         """Set the health of the instance for next iteration
 
         @param next_live Health of the next iteration
+
+        @cond
+        >>> pix = Pixel(0, 0, True)
+        >>> pix.set_next_live(False)
+        >>> pix.next_live
+        False
+
+        @endcond
         """
         self.next_live = next_live
